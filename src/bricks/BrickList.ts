@@ -33,16 +33,45 @@ export const SHAPE_LIST = [
 ];
 
 export const COLOR_LIST = [
-    [255, 0, 0],
-    [0, 255, 0],
-    [0, 0, 255],
-    [255, 255, 0],
-    [255, 0, 255],
-    [0, 255, 255],
-    [128, 0, 128],
-    [0, 128, 128],
-    [28, 128, 0],
-    [255, 165, 0]
+    [39, 139, 69],
+    [148, 148, 148],
+    [190, 6, 6],
+    [217, 218, 220],
+    [246, 197, 0],
+    [37, 98, 178],
+    [77, 77, 77],
+    [102, 102, 102],
+    [242, 159, 39],
+    [241, 152, 200],
+    [37, 62, 103],
+    [108, 72, 58],
+    [51, 83, 59],
+    [136, 121, 98],
+    [111, 39, 51],
+    [92, 68, 146],
+    [131, 92, 61],
+    [119, 157, 132]
+];
+
+export const COLOR_NAME = [
+    "Green",
+    "Medium Stone",
+    "Red",
+    "White",
+    "Yellow",
+    "Blue",
+    "Black",
+    "Dark Stone",
+    "Bright Orange",
+    "Bright Pink",
+    "Dark Blue",
+    "Brown",
+    "Dark Green",
+    "Dark Tan",
+    "Dark Red",
+    "Dark Purple",
+    "Dark Flesh",
+    "Sand Green"
 ];
 
 export const BRICK_LIST = function () {

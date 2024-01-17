@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { BRICK_LIST, COLOR_LIST, SHAPE_LIST } from "../bricks/BrickList";
+import { COLOR_LIST, SHAPE_LIST } from "../bricks/BrickList";
 import { LegoBrick } from "../bricks/LegoBrick";
 import "./randomizedPage.scss";
 import { make_color } from "../bricks/Color";
+
+const lego = require("../assets/images/lego.png")
+const logo = require("../assets/images/title.png");
 
 const NUMBER_TO_GEN = 3;
 const MAX_NUMBER_OF_BRICKS = 10;
@@ -54,11 +57,16 @@ export function RandomizedPage() {
     }
 
     return (<div className="randomized-list">
-        <p className="instructions">Make your own build with the following bricks and take a photo of it !</p>
+        <p className="instructions">Make your own build with the following bricks and take a photo of it!</p>
         <div className="list">
             {bricks}
         </div>
-
         <NavLink to="/">Go Back</NavLink>
+
+        <div className="logos">
+            <img src={lego} id="lego-logo" alt="lego" />
+            <div className="separator"></div>
+            <img src={logo} id="challenge-logo" alt="challenge" />
+        </div>
     </div>)
 }

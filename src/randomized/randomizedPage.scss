@@ -48,4 +48,34 @@
         }
     }
 
+    .logos {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        top: 1em;
+        right: 1em;
+
+        img {
+            padding-right: 0.6em;
+            margin-right: 0.6em;
+
+            &#lego-logo {
+                height: 7vh;
+            }
+
+            &#challenge-logo {
+                height: 7vh;
+                margin-left: 1em;
+            }
+
+        }
+
+        .separator {
+            height: 8vh;
+            width: 2px;
+            background-color: black;
+        }
+    }
 }

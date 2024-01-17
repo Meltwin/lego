@@ -16,8 +16,8 @@ void main(void) {
 
     // Apply lighting effect
 
-    highp vec3 ambientLight = vec3(0.4, 0.4, 0.4);
-    highp vec3 directionalLightColor = vec3(0.55,0.55, 0.55);
+    highp vec3 ambientLight = vec3(0.75, 0.75, 0.75);
+    highp vec3 directionalLightColor = vec3(0.65,0.65, 0.65);
     highp vec3 directionalVector = normalize(vec3(0.85, 0.9, 0.9));
 
     highp vec4 transformedNormal = uNormalMatrix * vec4(aVertexNormal, 1.0);
