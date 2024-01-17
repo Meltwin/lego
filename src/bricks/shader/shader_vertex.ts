@@ -1,4 +1,5 @@
-export const vsSource = `
+export const vsSource = () => {
+    return `
 attribute vec4 aVertexPosition;
 attribute vec3 aVertexNormal;
 attribute vec4 aVertexColor;
@@ -25,4 +26,4 @@ void main(void) {
     highp float directional = max(dot(transformedNormal.xyz, directionalVector), 0.0);
     vLighting = ambientLight + (directionalLightColor * directional);
 }
-`;
+`};

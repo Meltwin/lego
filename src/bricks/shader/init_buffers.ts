@@ -78,7 +78,6 @@ function initNormalBuffer(gl: WebGLRenderingContext, mesh: MeshOutput,) {
 
 export function initBuffers(gl: WebGLRenderingContext, infos: BrickValues): Buffers {
     const mesh = genBrickTriangles(infos);
-    console.log(mesh);
     const positionBuffer = initPositionBuffer(gl, mesh);
     const colorBuffer = initColorBuffer(gl, mesh.vertices.length, infos);
     const indexBuffer = initIndexBuffer(gl, mesh, infos);

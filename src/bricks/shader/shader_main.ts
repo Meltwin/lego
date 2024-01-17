@@ -67,7 +67,7 @@ export function main(elem: HTMLCanvasElement | null, infos: BrickValues) {
 
     // Initialize a shader program; this is where all the lighting
     // for the vertices and so forth is established.
-    const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+    const shaderProgram = initShaderProgram(gl, vsSource(), fsSource);
     if (shaderProgram === null) return;
     const programInfo = {
         program: shaderProgram,

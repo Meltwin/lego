@@ -3,6 +3,6 @@ export const fsSource = `
     varying highp vec3 vLighting;
 
     void main(void) {
-      gl_FragColor = gl_FragColor = vec4(vColor.rgb * vLighting, vColor.a);
+      gl_FragColor = vec4(vColor.rgb * vLighting, vColor.a);
     }
   `;

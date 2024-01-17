@@ -1,7 +1,6 @@
 import { MeshOutput } from "./Types";
 
 export function generateBox(length: number, width: number, height: number): MeshOutput {
-    console.log(length, width);
     return {
         vertices: [
             // Front face
