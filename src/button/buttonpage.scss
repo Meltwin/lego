@@ -5,9 +5,41 @@
     align-items: center;
     text-align: center;
 
+    .logos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            padding-right: 1em;
+            margin-right: 1em;
+
+            &#lego-logo {
+                height: 30vh;
+            }
+
+            &#challenge-logo {
+                height: 30vh;
+                margin-left: 1em;
+            }
+
+        }
+
+        .separator {
+            height: 40vh;
+            width: 2px;
+            background-color: black;
+        }
+    }
+
+    img {
+        height: 40vh;
+        margin-bottom: 2em;
+    }
+
     a {
-        background-color: rgb(206, 23, 23);
-        border: 3px outset rgb(146, 146, 146);
+        background-color: rgb(227, 0, 11);
+        //border: 2px outset rgb(146, 146, 146);
         padding: 1em;
 
         color: white;

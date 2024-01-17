@@ -18,6 +18,12 @@
         align-items: center;
         flex-wrap: wrap;
         margin-bottom: 5vh;
+
+        width: 100%;
+        padding: 3em 0;
+
+        //background-color: #00af4d;
+        background-color: rgb(255, 207, 0);
     }
 
     canvas {
@@ -28,8 +34,8 @@
     }
 
     a {
-        background-color: rgb(206, 23, 23);
-        border: 3px outset rgb(146, 146, 146);
+        background-color: rgb(227, 0, 11);
+        //border: 2px outset rgb(146, 146, 146);
         padding: 1em;
 
         color: white;
