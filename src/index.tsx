@@ -9,6 +9,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <LegoBrick />
-    <LegoBrick color={{ red: 0, blue: 1, green: 0.3, alpha: 1 }} width={2} length={3} height={0.5} />
+    <LegoBrick color={{ red: 0, blue: 1, green: 0.3, alpha: 1 }} width={2} length={3} height={0.4} />
   </React.StrictMode>
 );

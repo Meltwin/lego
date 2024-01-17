@@ -3,7 +3,7 @@ import { generateBox } from "./BoxGenerator";
 import { generateCylinders } from "./CylinderGenerator";
 import { MeshOutput } from "./Types";
 
-const MAX_SHADER_POS = 2;
+const MAX_SHADER_POS = 2.5;
 
 function getUnitSize(length: number, width: number) {
     return Math.min(1 / length, 1 / width);
@@ -34,13 +34,33 @@ export function genBrickTriangles(brick_info: BrickValues): MeshOutput {
     f = f.concat(cyl_points.faces);
     n = n.concat(cyl_points.normals);
 
+    // Compute barycenter of the brick
+    let min_x = 0, min_y = 0, min_z = 0;
+    let max_x = 0, max_y = 0, max_z = 0;
+    let mx = 0, my = 0, mz = 0;
+    for (let i = 0; i < v.length; i++) {
+        mx += v[i].x;
+        my += v[i].y;
+        mz += v[i].z;
+
+        min_x = Math.min(min_x, v[i].x);
+        max_x = Math.max(max_x, v[i].x);
+        min_y = Math.min(min_y, v[i].y);
+        max_y = Math.max(max_y, v[i].y);
+        min_z = Math.min(min_z, v[i].z);
+        max_z = Math.max(max_z, v[i].z);
+    }
+    mx /= v.length;
+    my /= v.length;
+    mz /= v.length;
+
+    let factor = Math.max(max_x - min_x, max_y - min_y, max_z - min_z);
+
     // Grow the final model
     for (let i = 0; i < v.length; i++) {
-        if (Math.abs(v[i].x) > 1 || Math.abs(v[i].y) > 1 || Math.abs(v[i].z) > 1)
-            console.log(v[i]);
-        v[i].x = MAX_SHADER_POS * MAX_SHADER_POS * (v[i].x - 0.5);
-        v[i].y = MAX_SHADER_POS * MAX_SHADER_POS * (v[i].y - 0.5);
-        v[i].z = MAX_SHADER_POS * MAX_SHADER_POS * (v[i].z + unit_size * (brick_info.height + brick_info.cylinderHeight) / 2);
+        v[i].x = 2 * MAX_SHADER_POS * (v[i].x - mx) / (factor);
+        v[i].y = 2 * MAX_SHADER_POS * (v[i].y - my) / (factor);
+        v[i].z = 2 * MAX_SHADER_POS * (v[i].z - mz) / (factor);
     }
 
     return {
@@ -49,3 +69,4 @@ export function genBrickTriangles(brick_info: BrickValues): MeshOutput {
         normals: n
     }
 }
+

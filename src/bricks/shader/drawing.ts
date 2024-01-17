@@ -129,12 +129,12 @@ export function drawScene(gl: WebGLRenderingContext, programInfo: ProgramInfo, b
     //     [0, 1, 1],
     // ); // axis to rotate around
 
-    // mat4.rotate(
-    //     modelViewMatrix, // destination matrix
-    //     modelViewMatrix, // matrix to rotate
-    //     rotation, // amount to rotate in radians
-    //     [0, 0, 1],
-    // ); // axis to rotate around (Z)
+    mat4.rotate(
+        modelViewMatrix, // destination matrix
+        modelViewMatrix, // matrix to rotate
+        rotation, // amount to rotate in radians
+        [0, 0, 1],
+    ); // axis to rotate around (Z)
     // mat4.rotate(
     //     modelViewMatrix, // destination matrix
     //     modelViewMatrix, // matrix to rotate
