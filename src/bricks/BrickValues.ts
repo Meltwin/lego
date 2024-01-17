@@ -26,7 +26,7 @@ export interface BrickValues {
 export const fillDefaultValues = (from: OptionalBrickValues): BrickValues => {
     return {
         // Render
-        renderWidth: from.renderWidth ?? 250,
+        renderWidth: from.renderWidth ?? 500,
         cylinderSteps: from.cylinderSteps ?? 20,
         cylinderHeight: from.cylinderHeight ?? 0.3,
 

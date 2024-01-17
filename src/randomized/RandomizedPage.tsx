@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { BRICK_LIST } from "../bricks/BrickList";
 import { LegoBrick } from "../bricks/LegoBrick";
+import "./randomizedPage.scss";
 
 const NUMBER_TO_GEN = 10;
 
@@ -23,15 +24,18 @@ export function RandomizedPage() {
 
     console.log(brick_index);
 
-    return (<>
-        {brick_index.map((elem) => {
-            return <LegoBrick
-                length={BRICK_LIST[elem].length}
-                width={BRICK_LIST[elem].width}
-                height={BRICK_LIST[elem].height}
-                color={BRICK_LIST[elem].color}
-            />
-        })}
+    return (<div className="randomized-list">
+        <div className="list">
+            {brick_index.map((elem) => {
+                return <LegoBrick
+                    length={BRICK_LIST[elem].length}
+                    width={BRICK_LIST[elem].width}
+                    height={BRICK_LIST[elem].height}
+                    color={BRICK_LIST[elem].color}
+                />
+            })}
+        </div>
+
         <NavLink to="/">Go Back</NavLink>
-    </>)
+    </div>)
 }
