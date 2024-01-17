@@ -1,0 +1,22 @@
+.button-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    a {
+        background-color: rgb(206, 23, 23);
+        border: 3px outset rgb(146, 146, 146);
+        padding: 1em;
+
+        color: white;
+        text-decoration: none;
+
+        border-radius: 5px;
+
+        &:hover {
+            background-color: rgb(172, 17, 17);
+        }
+    }
+}
