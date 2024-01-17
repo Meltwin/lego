@@ -54,6 +54,7 @@ export function RandomizedPage() {
     }
 
     return (<div className="randomized-list">
+        <p className="instructions">Make your own build with the following bricks and take a photo of it !</p>
         <div className="list">
             {bricks}
         </div>

@@ -12,7 +12,14 @@ export const LegoBrick: FunctionComponent<OptionalBrickValues> = (props) => {
         }, []
     )
     return (<div className="lego-brick">
+        <div className="brick-title"><p>{values.length}x{values.width} {(values.height === 1) ? "Brick" : "Slab"}</p></div>
         <canvas width={values.renderWidth} height={values.renderWidth} ref={canvasRef} />
-        <div><p>{values.number} bricks</p></div>
+        <div className="bottom-line">
+            <div className="filler"></div>
+            <div className="brick-number">
+                <p>{values.number} {(values.number === 1) ? "brick" : "bricks"}</p>
+            </div>
+        </div>
+
     </div>)
 }
