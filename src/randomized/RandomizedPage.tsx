@@ -38,12 +38,14 @@ function generateBrickRepartition(has_plane: boolean, n_shapes: number, n_bricks
         done = 1;
     }
     let gen_number = 0;
-    for (let i = ((has_plane) ? 1 : 0); i < n_shapes - 1; i++) {
+    for (let i = out_index.length; i < n_shapes - 1; i++) {
         gen_number = Math.floor(Math.random() * (n_bricks - done - n_shapes + i) + 1);
+        console.log(`${i} -> ${gen_number}`)
         done += gen_number;
         out_index.push(gen_number)
     }
     out_index.push(n_bricks - done);
+    console.log(out_index)
 
     return out_index;
 }
@@ -76,7 +78,7 @@ export function RandomizedPage() {
                 width={SHAPE_LIST[shape_index[index]][1]}
                 height={SHAPE_LIST[shape_index[index]][2]}
                 color={make_color(COLOR_LIST[color_index[index + ploff]][0] / 256, COLOR_LIST[color_index[index + ploff]][1] / 256, COLOR_LIST[color_index[index + ploff]][2] / 256, 1)}
-                number={number_of_bricks[index]}
+                number={number_of_bricks[index + ploff]}
                 key={["brick_", String(shape_index[index])].join("")}
             />
         );
