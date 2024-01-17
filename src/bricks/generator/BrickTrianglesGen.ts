@@ -3,7 +3,7 @@ import { generateBox } from "./BoxGenerator";
 import { generateCylinders } from "./CylinderGenerator";
 import { MeshOutput } from "./Types";
 
-const MAX_SHADER_POS = 2.5;
+const MAX_SHADER_POS = 2;
 
 function getUnitSize(length: number, width: number) {
     return Math.min(1 / length, 1 / width);
