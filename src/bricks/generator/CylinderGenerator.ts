@@ -52,7 +52,7 @@ function make_cylinder(cx: number, cy: number, h: number, hc: number, r: number,
                 z: (btmUp === 0) ? z_btm : z_top
             };
             v.push(v3);
-            n.push({ x: Math.cos(dtheta), y: Math.sin(dtheta), z: 0 });
+            n.push({ x: Math.cos(i * dtheta), y: Math.sin(i * dtheta), z: 0 });
 
             // Create new faces
             f.push({ v1: v1, v2: v2, v3: v.length - 1 }); // New triangle

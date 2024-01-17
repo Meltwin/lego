@@ -110,14 +110,14 @@ export function drawScene(gl: WebGLRenderingContext, programInfo: ProgramInfo, b
     mat4.rotate(
         modelViewMatrix, // destination matrix
         modelViewMatrix, // matrix to rotate
-        -50 * Math.PI / 180, // amount to rotate in radians
+        -60 * Math.PI / 180, // amount to rotate in radians
         [1, 0, 0],
     );
 
     mat4.rotate(
         modelViewMatrix, // destination matrix
         modelViewMatrix, // matrix to rotate
-        10 * Math.PI / 180, // amount to rotate in radians
+        20 * Math.PI / 180, // amount to rotate in radians
         [0, 0, 1],
     );
 
