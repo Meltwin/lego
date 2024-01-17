@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
-import { BRICK_LIST } from "../bricks/BrickList";
+import { BRICK_LIST, COLOR_LIST, SHAPE_LIST } from "../bricks/BrickList";
 import { LegoBrick } from "../bricks/LegoBrick";
 import "./randomizedPage.scss";
+import { make_color } from "../bricks/Color";
 
-const NUMBER_TO_GEN = 10;
+const NUMBER_TO_GEN = 3;
+const MAX_NUMBER_OF_BRICKS = 10;
 
-function generateBrickList(n: number, max: number): number[] {
+function generateIndexList(n: number, max: number): number[] {
     // Generate 10 different index
     const out_index: number[] = [];
 
@@ -19,21 +21,41 @@ function generateBrickList(n: number, max: number): number[] {
     return out_index;
 }
 
-export function RandomizedPage() {
-    const brick_index = generateBrickList(NUMBER_TO_GEN, BRICK_LIST.length);
+function generateBrickRepartition(n_shapes: number, n_bricks: number): number[] {
+    const out_index: number[] = [];
+    let done = 0;
+    let gen_number = 0;
+    for (let i = 0; i < n_shapes - 1; i++) {
+        gen_number = Math.floor(Math.random() * (n_bricks - done - n_shapes + i) + 1);
+        done += gen_number;
+        out_index.push(gen_number)
+    }
+    out_index.push(n_bricks - done);
 
-    console.log(brick_index);
+    return out_index;
+}
+
+export function RandomizedPage() {
+    const shape_index = generateIndexList(NUMBER_TO_GEN, SHAPE_LIST.length);
+    const color_index = generateIndexList(NUMBER_TO_GEN, COLOR_LIST.length);
+    const number_of_bricks = generateBrickRepartition(NUMBER_TO_GEN, MAX_NUMBER_OF_BRICKS);
+
+    const bricks: JSX.Element[] = [];
+    for (let index = 0; index < NUMBER_TO_GEN; index++) {
+        bricks.push(
+            <LegoBrick
+                length={SHAPE_LIST[shape_index[index]][0]}
+                width={SHAPE_LIST[shape_index[index]][1]}
+                height={SHAPE_LIST[shape_index[index]][2]}
+                color={make_color(COLOR_LIST[color_index[index]][0] / 256, COLOR_LIST[color_index[index]][1] / 256, COLOR_LIST[color_index[index]][2] / 256, 1)}
+                number={number_of_bricks[index]}
+            />
+        );
+    }
 
     return (<div className="randomized-list">
         <div className="list">
-            {brick_index.map((elem) => {
-                return <LegoBrick
-                    length={BRICK_LIST[elem].length}
-                    width={BRICK_LIST[elem].width}
-                    height={BRICK_LIST[elem].height}
-                    color={BRICK_LIST[elem].color}
-                />
-            })}
+            {bricks}
         </div>
 
         <NavLink to="/">Go Back</NavLink>

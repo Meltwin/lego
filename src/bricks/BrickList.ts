@@ -7,7 +7,7 @@ export interface Brick {
     color: Color
 };
 
-const make_brick = function (l: number, w: number, h: number, r: number, g: number, b: number): Brick {
+export const make_brick = function (l: number, w: number, h: number, r: number, g: number, b: number): Brick {
     return {
         length: l,
         width: w,
@@ -21,7 +21,7 @@ const make_brick = function (l: number, w: number, h: number, r: number, g: numb
     }
 };
 
-const SHAPE_LIST = [
+export const SHAPE_LIST = [
     [2, 3, 1],
     [1, 1, 1],
     [1, 4, 1],
@@ -32,7 +32,7 @@ const SHAPE_LIST = [
     [2, 8, 1]
 ];
 
-const COLOR_LIST = [
+export const COLOR_LIST = [
     [255, 0, 0],
     [0, 255, 0],
     [0, 0, 255],
