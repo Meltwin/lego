@@ -96,14 +96,14 @@ export const COLOR_LIST = [
     //[102, 102, 102],
     [242, 159, 39],
     [241, 152, 200],
-    [37, 62, 103],
+    //[37, 62, 103],
     [108, 72, 58],
     [51, 83, 59],
     //[136, 121, 98],
     [111, 39, 51],
-    [92, 68, 146],
+    //[92, 68, 146],
     //[131, 92, 61],
-    [119, 157, 132]
+    //[119, 157, 132]
 ];
 
 export const COLOR_NAME = [
@@ -117,12 +117,12 @@ export const COLOR_NAME = [
     //"Dark Stone",
     "Bright Orange",
     "Bright Pink",
-    "Dark Blue",
+    //"Dark Blue",
     "Brown",
     "Dark Green",
     //"Dark Tan",
     "Dark Red",
-    "Dark Purple",
+    //"Dark Purple",
     //"Dark Flesh",
-    "Sand Green"
+    //"Sand Green"
 ];
