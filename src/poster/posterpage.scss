@@ -1,0 +1,47 @@
+.poster-page {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 100vh;
+
+    .image {
+        flex: 1;
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1em;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            background-color: rgb(227, 0, 11);
+            //border: 2px outset rgb(146, 146, 146);
+            padding: 1em;
+
+            user-select: none;
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            &:hover {
+                background-color: rgb(172, 17, 17);
+            }
+        }
+    }
+
+
+
+}

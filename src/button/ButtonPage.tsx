@@ -13,6 +13,9 @@ export function ButtonPage() {
         </div>
 
         <h1>Click below to generate the mystery box !</h1>
-        <NavLink to="random">Get a Mystery Box !</NavLink>
+        <div className="buttons">
+            <NavLink to="random">Get a Mystery Box !</NavLink>
+            <NavLink to="poster">See the poster !</NavLink>
+        </div>
     </div>)
 }

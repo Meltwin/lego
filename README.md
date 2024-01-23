@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+***
+![Lego Creative Challenge](./creativity-challenge.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+***
 
-## Available Scripts
+The Lego Creativity Challenge was a innovative concept we came up during the *"Innovation in Engineering"* course at DTU with my team. The goal was to find a concept that could **inspire children to become the builder of tomorrow** while engaging more in going to the several stores. 
 
-In the project directory, you can run:
+# The idea
 
-### `yarn start`
+This concept is an ice-breaker for customers coming in stores and wanting to play with the *Pick n' Build* walls. Often this people don't know with which brick to start and where to go. By giving them some constraints on bricks to include, we're hoping that they'll be more inspired and able to build something nice that could be displayed in store or on screens.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# How does it works
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The concept is simple: given the store inventory for the *Pick n' Build* dispensers, the algorithm just has to take three bricks randomly and give a certain amount of them. In the end, the consumer should have **10 mandatory bricks** of **3 different types**. 
 
-### `yarn test`
+We also choose to weight the bricks by their size (with an exponential rule). The bigger the bricks, the lesser they will appear. Thus it will be easier to include them in their build.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The build is space-constrained. It should fit inside a cube of edge 20 cm. 
 
-### `yarn build`
+# How this app is made
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This app was made using React (and in Typescript) for the website and WebGL for the spinning bricks display. It uses ReactRouter for the navigation between pages. The overall architecture is a SPA (*single page application*) without any backend behind.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to clone it
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+First, clone this repository on your computer: 
 
-### `yarn eject`
+```shell
+git clone https://github.com/Meltwin/lego.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+And download all the packages you need to make it run:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```shell
+yarn add
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## How to build it
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To build this website, just run the following command:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```shell
+yarn build
+```
